@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Synthwave Dev</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  :root {
+    --background-color: #202020;
+    --accent-color: #32CD32;
+    --text-color: #ffffff;
+    --glass-background: rgba(255, 255, 255, 0.1);
+    --blur-radius: 20px;
+    --transition-speed: 0.3s;
+    --hover-effect: scale(1.03);
+    --gradient-start: #ff7e5f;
+    --gradient-end: #feb47b;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    background-image: linear-gradient(135deg, #2b2d3e 25%, transparent 25%), linear-gradient(225deg, #2b2d3e 25%, transparent 25%), linear-gradient(45deg, #2b2d3e 25%, transparent 25%), linear-gradient(315deg, #2b2d3e 25%, #202020 25%);
+    background-position: 4px 0, 4px 0, 0 0, 0 0;
+    background-size: 4px 4px;
+    background-repeat: repeat;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .glassmorphic-card {
+    background: var(--glass-background);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(var(--blur-radius));
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    will-change: transform;
+    text-align: center;
+    width: 300px;
+  }
+
+  .glassmorphic-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+  
+  .bottom-section {
+    background: var(--glass-background);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(var(--blur-radius));
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .subheader {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .social-icons {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem; /* Increased spacing */
+  }
+
+  .social-icons li {
+    background: var(--glass-background);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+  }
+
+  .social-icons li:hover {
+    background-color: var(--accent-color);
+    transform: var(--hover-effect);
+  }
+
+  .social-icons i {
+    color: var(--text-color);
+    font-size: 20px;
+  }
+
+  .discord-card {
+    background: var(--glass-background);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(var(--blur-radius));
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .discord-username, .discord-icon {
+    color: var(--text-color);
+  }
+
+  .discord-icon {
+    font-size: 1.5rem;
+  }
+
+  .clock-container {
+    text-align: center;
+    margin-top: 2rem; /* Increased spacing */
+  }
+
+.clock {
+    font-size: 1.5rem;
+    background: var(--glass-background);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(var(--blur-radius));
+    position: relative;
+    color: var(--accent-color); /* Altered clock text color for 'cooler' look */
+    font-family: 'Digital-7 Mono', monospace; /* Added a digital font for the clock */
+  }
+
+  .live-time-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-color); /* Changed the text color to white as requested */
+    margin-top: 0.5rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="glassmorphic-card">
+  <h1 class="header">Synthwave Dev</h1>
+  <p class="subheader">Innovative Web Solutions</p>
+  <ul class="social-icons">
+    <li><a href="https://twitter.com/synthwavedev" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+    <li><a href="https://github.com/synthwavedev" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+  </ul>
+  <div class="clock-container">
+    <div id="clock" class="clock"></div>
+    <span class="live-time-label">My Live Time</span>
+  </div>
+  <div class="discord-card">
+    <i class="fab fa-discord discord-icon"></i>
+    <p class="discord-username">vuyp</p>
+  </div>
+</div>
+
+<script>
+  function updateClock() {
+    const clockElement = document.getElementById('clock');
+    const now = new Date();
+    const options = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false }; // Removed timezone display
+    clockElement.textContent = now.toLocaleTimeString('en-GB', options);
+  }
+  setInterval(updateClock, 1000);
+  updateClock(); // Initialize the clock
+</script>
+
+</body>
+</html>
