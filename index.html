@@ -34,11 +34,17 @@
     color: var(--text-color);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    justify-content: space-between; /* Adjusted for spacing between elements */
+    min-height: 100vh; /* Adjusted to min-height for full height */
     overflow: hidden;
     position: relative;
+  }
+
+  .content {
+    flex: 1; /* Takes all available space pushing footer to the bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .glassmorphic-card {
@@ -67,10 +73,6 @@
     backdrop-filter: blur(var(--blur-radius));
     border-radius: 0;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     text-align: center;
   }
 
@@ -112,7 +114,7 @@
   }
 
   .social-icons li:hover {
-    background-color: var(--accent-color);
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
     transform: var(--hover-effect);
   }
 
@@ -164,29 +166,39 @@
     color: var(--text-color);
     margin-top: 0.5rem;
   }
+
+  /* Added this style to position the main card in the center of the non-footer area */
+  .main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 </style>
 </head>
 <body>
 
-<div class="glassmorphic-card">
-  <h1 class="header">Hi, I'm Leo</h1>
-  <p class="subheader">I design websites and build software that improve lives.</p>
-  <ul class="social-icons">
-    <li><a href="https://twitter.com/synthwavedd" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
-    <li><a href="https://github.com/defineprogramming" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
-  </ul>
-  <div class="clock-container">
-    <div id="clock" class="clock"></div>
-    <span class="live-time-label">My Live Time</span>
-  </div>
-  <div class="discord-card">
-    <i class="fab fa-discord discord-icon"></i>
-    <p class="discord-username">vuyp</p>
+<div class="main-container">
+  <div class="glassmorphic-card">
+    <h1 class="header">Hi, I'm Leo.</h1>
+    <p class="subheader">I design websites and build software that improve lives.</p>
+    <ul class="social-icons">
+      <li><a href="https://twitter.com/synthwavedd" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="https://github.com/defineprogramming" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+    </ul>
+    <div class="clock-container">
+      <div id="clock" class="clock"></div>
+      <span class="live-time-label">My Live Time</span>
+    </div>
+    <div class="discord-card">
+      <i class="fab fa-discord discord-icon"></i>
+      <p class="discord-username">vuyp</p>
+    </div>
   </div>
 </div>
 
 <div class="footer">
-  <p>Version 1.1.0 - Build 202311261147</p>
+  <p>Version 1.1.1 - Build 202311261157</p>
 </div>
 
 <script>
