@@ -1,3 +1,3 @@
 # SynthwaveDev.com
 
-The HTML, CSS and JavaScript for (synthwavedev.com)[https://synthwavedev.com], my personal site.
+The HTML, CSS and JavaScript for [synthwavedev.com](https://synthwavedev.com), my personal site.
